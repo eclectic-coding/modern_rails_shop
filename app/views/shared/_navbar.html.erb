@@ -1,36 +1,31 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-white">
   <div class="container-fluid">
-    <%= link_to "Rails Shop", root_path, class: "navbar-brand" %>
+    <%= link_to "Rails Shop", root_path, class: "navbar-brand me-5" %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <%= link_to "Home", root_path, method: :post, class: "nav-link" %>
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item px-2">
+          <%= link_to "Home", root_path, aria: { current: "page" }, class: "nav-link fw-500" %>
         </li>
       </ul>
-    </div>
 
-    <% if rodauth.logged_in? %>
-      <div class="dropdown">
-        <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" type="button">
-          <%= current_account.profile.first.name %>
-        </button>
-        <div class="dropdown-menu dropdown-menu-end">
-          <%= link_to "Change password", rodauth.change_password_path, class: "dropdown-item" %>
-          <%= link_to "Change email", rodauth.change_login_path, class: "dropdown-item" %>
-          <div class="dropdown-divider"></div>
-          <%= link_to "Close account", rodauth.close_account_path, class: "dropdown-item text-danger" %>
-          <%= link_to "Sign out", rodauth.logout_path, data: { turbo_method: :post }, class: "dropdown-item" %>
-        </div>
+      <div class="ms-auto navbar-nav">
+        <% if rodauth.logged_in? %>
+          <% if allowed_to?(:index?, :admin) %>
+            <li><a class="nav-link fw-500 me-3 px-2" href="/admin">Admin</a></li>
+          <% end %>
+          <%= link_to "Profile", "#", class: "nav-link fw-500 me-3 px-2" %>
+          <%= form_with url: rodauth.logout_path, method: :post, data: { turbo: false } do |form| %>
+            <%= form.submit rodauth.logout_button, class: "nav-link fw-500 border-0 bg-white me-4 ms-2 ms-lg-0 mb-2 mb-lg-0 " %>
+          <% end %>
+        <% else %>
+          <%= link_to "Sign up", rodauth.create_account_path, class: "nav-link fw-500 me-3 px-2" %>
+          <%= link_to "Sign in", rodauth.login_path, class: "nav-link fw-500 me-4 px-2" %>
+        <% end %>
       </div>
-    <% else %>
-      <div>
-        <%= link_to "Sign in", rodauth.login_path, class: "btn btn-outline-primary" %>
-        <%= link_to "Sign up", rodauth.create_account_path, class: "btn btn-success" %>
-      </div>
-    <% end %>
+    </div>
   </div>
 </nav>

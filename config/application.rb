@@ -31,6 +31,9 @@ module ModernRailsShop
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    # current_account will be used, not current_user
+    config.action_policy.controller_authorize_current_user = false
+
     config.generators do |g|
       g.system_tests = nil
       g.stylesheets = false

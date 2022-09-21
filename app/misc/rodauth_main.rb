@@ -42,6 +42,14 @@ class RodauthMain < Rodauth::Rails::Auth
     # Redirect to the app from login and registration pages if already logged in.
     # already_logged_in { redirect login_redirect }
 
+    login_redirect do
+      if Profile.find_by!(account_id: account_id).account.role == 'admin'
+        rails_routes.admin_root_path
+      else
+        rails_routes.root_path
+      end
+    end
+
     # ==> Emails
     # Use a custom mailer for delivering authentication emails.
     create_reset_password_email do
