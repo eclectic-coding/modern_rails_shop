@@ -14,6 +14,7 @@ gem "cssbundling-rails"
 gem "bootsnap", require: false
 gem "jbuilder"
 gem "redis", "~> 4.0"
+gem "rodauth-rails"
 # gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do
@@ -27,6 +28,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
   gem 'fuubar', '~> 2.5', '>= 2.5.1'
+  gem "letter_opener"
 end
 
 group :test do
