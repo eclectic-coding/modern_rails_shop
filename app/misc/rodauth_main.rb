@@ -46,7 +46,7 @@ class RodauthMain < Rodauth::Rails::Auth
       if Profile.find_by!(account_id: account_id).account.role == 'admin'
         rails_routes.admin_root_path
       else
-        rails_routes.root_path
+        rails_routes.profile_root_path
       end
     end
 
