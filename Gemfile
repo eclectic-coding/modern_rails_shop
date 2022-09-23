@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
-gem "rails", "~> 7.0.3", ">= 7.0.3.1"
+gem "rails", "~> 7.0.1"
 gem "sprockets-rails"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
@@ -14,6 +14,8 @@ gem "cssbundling-rails"
 gem "bootsnap", require: false
 gem "jbuilder"
 gem "redis", "~> 4.0"
+gem "rodauth-rails"
+gem "action_policy"
 # gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do
@@ -27,6 +29,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
   gem 'fuubar', '~> 2.5', '>= 2.5.1'
+  gem "letter_opener"
 end
 
 group :test do
