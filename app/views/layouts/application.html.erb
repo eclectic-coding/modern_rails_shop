@@ -13,6 +13,7 @@
   <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
       <%= render "shared/navbar" %>
+      <%= render "shared/flash", flash: flash %>
 
       <div class="container mt-4 mx-auto">
         <%= yield %>
@@ -20,6 +21,8 @@
       </div>
     </main>
 
-      <%= render "shared/footer" %>
+    <%= render "shared/footer" %>
+
+    <%= yield :custom_javascript %>
   </body>
 </html>

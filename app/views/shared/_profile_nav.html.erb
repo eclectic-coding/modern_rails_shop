@@ -21,9 +21,6 @@
               <%= current_account.profile.name %></span>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark fs-small shadow">
-            <% if allowed_to?(:index?, :admin) %>
-              <li><a class="dropdown-item" href="/admin">Admin</a></li>
-            <% end %>
             <li><a class="dropdown-item" href="/">Back to home</a></li>
             <li><a class="dropdown-item" href="/profile">Profile</a></li>
             <li>

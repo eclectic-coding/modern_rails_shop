@@ -83,7 +83,7 @@ class RodauthMain < Rodauth::Rails::Auth
     # Override default flash messages.
     # create_account_notice_flash "Your account has been created. Please verify your account by visiting the confirmation link sent to your email address."
     require_login_error_flash "Login is required for accessing this page"
-    # login_notice_flash nil
+    login_notice_flash "You have been successfully logged in."
 
     # ==> Validation
     # Override default validation error messages.
