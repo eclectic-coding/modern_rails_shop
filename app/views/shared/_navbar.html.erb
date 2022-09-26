@@ -1,31 +1,49 @@
-<nav class="navbar navbar-expand-lg bg-white">
-  <div class="container-fluid">
-    <%= link_to "Rails Shop", root_path, class: "navbar-brand me-5" %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<nav class="navbar bg-white">
+  <div class="container-fluid justify-content-between">
+    <!-- mobile menu -->
+    <button class="d-none d-sm-block d-md-none border-0 bg-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMainNav"
+            aria-controls="offcanvasMainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <%= inline_svg "menu-closed", class: "icon" %>
     </button>
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item px-2">
-          <%= link_to "Home", root_path, aria: { current: "page" }, class: "nav-link fw-500" %>
-        </li>
-      </ul>
 
-      <div class="ms-auto navbar-nav">
-        <% if rodauth.logged_in? %>
-          <% if allowed_to?(:index?, :admin) %>
-            <li><a class="nav-link fw-500 me-3 px-2" href="/admin">Admin</a></li>
-          <% end %>
-          <%= link_to "Profile", "#", class: "nav-link fw-500 me-3 px-2" %>
-          <%= form_with url: rodauth.logout_path, method: :post, data: { turbo: false } do |form| %>
-            <%= form.submit rodauth.logout_button, class: "nav-link fw-500 border-0 bg-white me-4 ms-2 ms-lg-0 mb-2 mb-lg-0 " %>
-          <% end %>
-        <% else %>
-          <%= link_to "Sign up", rodauth.create_account_path, class: "nav-link fw-500 me-3 px-2" %>
-          <%= link_to "Sign in", rodauth.login_path, class: "nav-link fw-500 me-4 px-2" %>
-        <% end %>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMainNav" aria-labelledby="offcanvasMainNav">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body px-0">
+        <ul class="navbar-nav justify-content-between">
+          <li><%= link_to "Men", "#", class: "nav-link fw-500 text-uppercase p-3" %></li>
+          <li><%= link_to "Women", "#", class: "nav-link fw-500 text-uppercase p-3" %></li>
+          <li class="border-top">
+            <%= link_to "Account", "#", class: "nav-link fw-500 text-uppercase p-3" %>
+          </li>
+        </ul>
       </div>
     </div>
+
+    <!-- left menu -->
+    <ul class="justify-content-between list-unstyled d-none d-md-flex mb-0">
+      <li><%= link_to "Men Left", "#", class: "nav-link fw-500 mx-1" %></li>
+      <li><%= link_to "Women", "#", class: "nav-link fw-500 mx-1" %></li>
+    </ul>
+
+    <!-- center logo -->
+    <div class="d-flex justify-content-center">
+      <%= link_to "Rails Shop", root_path, class: "navbar-brand me-0" %>
+    </div>
+
+    <!-- right menu -->
+    <ul class="d-flex justify-content-center align-items-center list-unstyled mb-0">
+      <li class="nav-item mx-3 d-none d-md-block">
+        <%= inline_svg 'user.svg', class: "icon" %>
+      </li>
+      <li class="nav-item mx-3 d-none d-md-block">
+        <%= inline_svg 'search', class: "icon" %>
+      </li>
+      <li class="nav-item mx-3">
+        <%= inline_svg 'cart.svg', class: "icon" %>
+      </li>
+    </ul>
+
   </div>
 </nav>

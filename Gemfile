@@ -16,6 +16,7 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 gem "rodauth-rails"
 gem "action_policy"
+gem 'inline_svg'
 # gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do
