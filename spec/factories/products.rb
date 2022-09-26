@@ -3,7 +3,8 @@ FactoryBot.define do
     title { "MyString" }
     price { "9.99" }
     description { "MyText" }
-    category { "MyString" }
+    category { nil }
     image { "MyString" }
+    stock { "9.99" }
   end
 end
