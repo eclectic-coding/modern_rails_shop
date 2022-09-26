@@ -16,6 +16,7 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 gem "rodauth-rails"
 gem "action_policy"
+gem 'inline_svg'
 # gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do
@@ -30,6 +31,8 @@ group :development do
   gem "web-console"
   gem 'fuubar', '~> 2.5', '>= 2.5.1'
   gem "letter_opener"
+  gem "faraday"
+  gem "faker"
 end
 
 group :test do

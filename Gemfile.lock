@@ -94,6 +94,12 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    faker (2.23.0)
+      i18n (>= 1.8.11, < 2)
+    faraday (2.5.2)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.0)
     fuubar (2.5.1)
       rspec-core (~> 3.0)
       ruby-progressbar (~> 1.4)
@@ -101,6 +107,9 @@ GEM
       activesupport (>= 5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    inline_svg (1.8.0)
+      activesupport (>= 3.0)
+      nokogiri (>= 1.6)
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
@@ -212,6 +221,7 @@ GEM
     rspec-support (3.11.1)
     ruby-next-core (0.15.2)
     ruby-progressbar (1.11.0)
+    ruby2_keywords (0.0.5)
     sequel (5.60.1)
     sequel-activerecord_connection (1.2.9)
       activerecord (>= 4.2, < 8)
@@ -261,7 +271,10 @@ DEPENDENCIES
   cssbundling-rails
   debug
   factory_bot_rails (~> 6.2)
+  faker
+  faraday
   fuubar (~> 2.5, >= 2.5.1)
+  inline_svg
   jbuilder
   jsbundling-rails
   letter_opener
