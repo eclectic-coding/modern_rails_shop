@@ -1,6 +1,4 @@
-
-
-# fakestoreapi - categories
+# fake store api - categories
 @category_response = Faraday.get "https://fakestoreapi.com/products/categories"
 
 categories = JSON.parse(@category_response.body)
@@ -12,13 +10,12 @@ categories.each do |category|
 end
 puts "Seeded Categories"
 
-# fakestoreapi - products
-@category_response = Faraday.get
+# fake store api - products
+@category_response = Faraday.get "https://fakestoreapi.com/products/categories"
 @product_response = Faraday.get "https://fakestoreapi.com/products"
 products = JSON.parse(@product_response.body)
 
 products.each do |product|
-  p product
   Product.find_or_create_by(
     title: product["title"],
     price: product["price"],
