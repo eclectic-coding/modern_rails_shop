@@ -1,11 +1,11 @@
 <% unless rodauth.login_form_footer_links.empty? %>
 
-  <div class="d-flex justify-content-around align-items-center">
+  <div class="row d-flex justify-content-around align-items-top">
     <% rodauth.login_form_footer_links.sort.each_with_index do |(_, link, text), idx| %>
       <% next if idx == 0 %>
-      <div>
+      <div class="col-lg-6 col-md-12">
         <small>
-          <%= link_to text, link, class: "text-reset text-uppercase text-decoration-underline" %>
+          <%= link_to text, link, class: "shop__links" %>
         </small>
       </div>
     <% end %>
