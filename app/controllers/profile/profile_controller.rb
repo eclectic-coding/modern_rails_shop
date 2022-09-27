@@ -14,7 +14,11 @@ class Profile::ProfileController < ActionController::Base
   end
 
   def authenticate
-    rodauth.require_authentication
+    if !current_account
+      redirect_to profile_login_path
+    else
+      rodauth.require_authentication
+    end
   end
 
 end
