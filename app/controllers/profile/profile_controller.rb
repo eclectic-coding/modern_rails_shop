@@ -2,7 +2,7 @@ class Profile::ProfileController < ActionController::Base
   before_action :authenticate
   before_action :set_profile, only: [:show]
 
-  layout "profile"
+  layout "login_profile"
 
   def show
   end

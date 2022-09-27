@@ -1,4 +1,18 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+/* Custom theme overrides */
+$theme-colors: (
+        primary: #234d7b,
+        secondary: #3b3c3e,
+        success: #1e6111,
+        info:  #64c3d2,
+        warning: #f5e74a,
+        danger: #820410
+);
+
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-@import 'custom.scss';
+@import 'customize_bootstrap.scss';
+@import 'custom_styles.scss';

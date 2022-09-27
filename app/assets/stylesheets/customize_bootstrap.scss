@@ -1,0 +1,23 @@
+.btn {
+  border-radius: 0;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.nav-link {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: black;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.navbar-brand {
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
