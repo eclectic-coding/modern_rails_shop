@@ -10,12 +10,11 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="profile bg-light">
+  <body class="profile">
     <main>
+      <%= render "shared/navbar" %>
 
-      <%= render "shared/profile_nav" %>
-
-        <%= yield %>
+      <%= yield %>
 
     </main>
   </body>

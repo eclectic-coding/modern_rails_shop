@@ -1,2 +1,20 @@
-<h1>Profile::Login#show</h1>
-<p>Find me in app/views/profile/login/show.html.erb</p>
+<div class="visually-hidden">
+  <h1>Login or Create Account</h1>
+</div>
+
+<div class="container mt-5">
+  <div class="row gx-5">
+    <div class="col-6">
+      <div class="p-3">
+        <h2 class="mb-5 text-capitalize">Login</h2>
+        <%= render partial: "rodauth/login" %>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="p-3">
+        <h2 class="mb-5 text-capitalize">Create Account</h2>
+        <%= render partial: "rodauth/create_account" %>
+      </div>
+    </div>
+  </div>
+</div>
