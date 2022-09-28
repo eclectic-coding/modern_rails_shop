@@ -1,4 +1,4 @@
-class Admin::AdminController < ActionController::Base
+class Admin::AdminController < ApplicationController
   before_action :authenticate
 
   authorize :account, through: :current_account

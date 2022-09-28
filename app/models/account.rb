@@ -9,5 +9,4 @@ class Account < ApplicationRecord
 
   has_many :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
-
 end

@@ -1,0 +1,15 @@
+require: rubocop-rails
+
+# Offense count: 2
+# This cop supports unsafe autocorrection (--autocorrect-all).
+# Configuration parameters: Include.
+# Include: app/**/*.rb, config/**/*.rb, db/**/*.rb, lib/**/*.rb
+Rails/Output:
+  Exclude:
+    - 'db/seeds.rb'
+
+# Offense count: 1
+# This cop supports safe autocorrection (--autocorrect).
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'

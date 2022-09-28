@@ -5,7 +5,7 @@ categories = JSON.parse(@category_response.body)
 
 categories.each do |category|
   Category.find_or_create_by(
-    name: category.gsub(' ', '_').gsub("'", '')
+    name: category.tr(" ", "_").delete("'")
   )
 end
 puts "Seeded Categories"
@@ -20,7 +20,7 @@ products.each do |product|
     title: product["title"],
     price: product["price"],
     description: product["description"],
-    category: Category.find_by(name: product["category"].gsub(' ', '_').gsub("'", '')),
+    category: Category.find_by(name: product["category"].tr(" ", "_").delete("'")),
     image: product["image"],
     stock: Faker::Alphanumeric.alphanumeric(number: 10)
   )

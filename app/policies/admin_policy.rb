@@ -1,7 +1,5 @@
 class AdminPolicy < ApplicationPolicy
-
   def index?
-    account.role == 'admin'
+    account.role == "admin"
   end
-
 end

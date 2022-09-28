@@ -1,12 +1,12 @@
-require 'spec_helper'
-ENV['RAILS_ENV'] ||= 'test'
-require_relative '../config/environment'
+require "spec_helper"
+ENV["RAILS_ENV"] ||= "test"
+require_relative "../config/environment"
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
-require 'rspec/rails'
-require 'fuubar'
+require "rspec/rails"
+require "fuubar"
 
-Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+Dir[Rails.root.join("spec", "support", "**", "*.rb")].sort.each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
 begin
@@ -30,5 +30,5 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.fuubar_output_pending_results = false
-  config.fuubar_progress_bar_options = { format: 'Completed Tests <%B> %p%% %a' }
+  config.fuubar_progress_bar_options = { format: "Completed Tests <%B> %p%% %a" }
 end

@@ -43,7 +43,7 @@ class RodauthMain < Rodauth::Rails::Auth
     # already_logged_in { redirect login_redirect }
 
     login_redirect do
-      if Profile.find_by!(account_id: account_id).account.role == 'admin'
+      if Profile.find_by!(account_id: account_id).account.role == "admin"
         rails_routes.admin_root_path
       else
         rails_routes.profile_root_path
@@ -145,6 +145,5 @@ class RodauthMain < Rodauth::Rails::Auth
 
     create_account_route "register"
     prefix "/user"
-
   end
 end

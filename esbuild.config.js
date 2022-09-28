@@ -11,7 +11,8 @@ const watchDirectories = [
     "./app/javascript/**/*.js",
     "./app/views/**/*.html.erb",
     "./app/assets/stylesheets/*.css",
-    "./app/assets/stylesheets/*.scss"
+    "./app/assets/stylesheets/*.scss",
+    "./config/locales/**/*.yml"
 ]
 
 const config = {

@@ -1,3 +1,2 @@
 class AccountPolicy < AdminPolicy
-
 end

@@ -1,4 +1,4 @@
-class Profile::ProfileController < ActionController::Base
+class Profile::ProfileController < ApplicationController
   before_action :authenticate
   before_action :set_profile, only: [:show]
 
@@ -20,5 +20,4 @@ class Profile::ProfileController < ActionController::Base
       rodauth.require_authentication
     end
   end
-
 end
