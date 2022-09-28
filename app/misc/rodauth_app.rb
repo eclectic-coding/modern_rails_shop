@@ -6,7 +6,7 @@ class RodauthApp < Rodauth::Rails::App
     r.rodauth
 
     if r.path.start_with?("/admin")
-      rodauth.require_authenication
+      rodauth.require_authentication
       if Account.find(rodauth.session_value).role != 'admin'
         raise SecurityError.new 'not allowed'
       end

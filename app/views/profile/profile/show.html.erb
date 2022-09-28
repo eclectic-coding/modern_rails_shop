@@ -8,7 +8,9 @@
         <%= link_to t('show.edit_profile'), "#", class: "shop__links" %>
       </div>
       <div class="ms-2">
-        <%= link_to t('logout_btn'), rodauth.logout_path, method: :post, class: "shop__links" %>
+        <%= form_with url: rodauth.logout_path, method: :post, data: { turbo: false } do |f| %>
+          <%= f.submit rodauth.logout_button, class: "btn btn-link shop__links" %>
+        <% end %>
       </div>
     </div>
   </div>
