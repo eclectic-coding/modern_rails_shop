@@ -1,0 +1,19 @@
+<button class="d-none d-sm-block d-md-none border-0 bg-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMainNav"
+        aria-controls="offcanvasMainNav" aria-expanded="false" aria-label="Toggle navigation">
+  <%= inline_svg "menu-closed", class: "icon" %>
+</button>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMainNav" aria-labelledby="offcanvasMainNav">
+  <div class="offcanvas-header">
+    <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body px-0">
+    <ul class="navbar-nav justify-content-between">
+      <li><%= link_to "Men", "#", class: "nav-link fw-500 text-uppercase p-3" %></li>
+      <li><%= link_to "Women", "#", class: "nav-link fw-500 text-uppercase p-3" %></li>
+      <li class="border-top">
+        <%= link_to "Account", "#", class: "nav-link fw-500 text-uppercase p-3" %>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -2,7 +2,7 @@ class Profile::ProfileController < ActionController::Base
   before_action :authenticate
   before_action :set_profile, only: [:show]
 
-  layout "profile"
+  layout "login_profile"
 
   def show
   end
@@ -14,7 +14,11 @@ class Profile::ProfileController < ActionController::Base
   end
 
   def authenticate
-    rodauth.require_authentication
+    if !current_account
+      redirect_to profile_login_path
+    else
+      rodauth.require_authentication
+    end
   end
 
 end

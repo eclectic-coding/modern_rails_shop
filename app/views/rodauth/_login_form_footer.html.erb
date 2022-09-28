@@ -1,9 +1,13 @@
 <% unless rodauth.login_form_footer_links.empty? %>
-  <%== rodauth.login_form_footer_links_heading %>
 
-  <ul>
-    <% rodauth.login_form_footer_links.sort.each do |_, link, text| %>
-      <li><%= link_to text, link %></li>
+  <div class="row d-flex justify-content-around align-items-top">
+    <% rodauth.login_form_footer_links.sort.each_with_index do |(_, link, text), idx| %>
+      <% next if idx == 0 %>
+      <div class="col-lg-6 col-md-12">
+        <small>
+          <%= link_to text, link, class: "shop__links" %>
+        </small>
+      </div>
     <% end %>
-  </ul>
+  </div>
 <% end %>

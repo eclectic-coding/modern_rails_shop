@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  namespace :profile do
-    get 'profile/show'
-  end
+  # namespace :profile do
+  #   get 'profile/show'
+  # end
+
   root 'static_pages#home'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   namespace :admin do
 
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   # Customer dashboard
   namespace :profile do
+    get '/login', to: "login#show", as: "/login"
     root "profile#show"
   end
 

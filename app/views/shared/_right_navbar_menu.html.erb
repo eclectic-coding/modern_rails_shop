@@ -1,0 +1,17 @@
+<ul class="d-flex justify-content-center align-items-center list-unstyled mb-0">
+  <li class="nav-item mx-3 d-none d-md-block">
+    <%= link_to profile_root_path, class: "nav-link", aria: { label: "Profile" } do %>
+      <%= inline_svg 'user.svg', class: "icon" %>
+    <% end %>
+  </li>
+  <li class="nav-item mx-3 d-none d-md-block">
+    <%= link_to root_path, class: "nav-link", aria: { label: "Search" } do %>
+      <%= inline_svg 'search', class: "icon" %>
+    <% end %>
+  </li>
+  <li class="nav-item mx-3">
+    <%= link_to root_path, class: "nav-link", aria: { label: "Shopping cart" } do %>
+      <%= inline_svg 'cart.svg', class: "icon" %>
+    <% end %>
+  </li>
+</ul>
