@@ -1,10 +1,11 @@
 class Profile::ProfileController < ApplicationController
-  before_action :authenticate
+  before_action :authenticate_profile
   before_action :set_profile, only: [:show]
 
   layout "login_profile"
 
   def show
+    authorize!
   end
 
   private
@@ -13,10 +14,10 @@ class Profile::ProfileController < ApplicationController
     @profile = Profile.find(current_account.profile[0].id)
   end
 
-  def authenticate
+  def authenticate_profile
     if !current_account
       redirect_to profile_login_path
-    else
+    elsif current_account
       rodauth.require_authentication
     end
   end
